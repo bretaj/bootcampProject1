@@ -1,6 +1,7 @@
 # bootcampProject1
 ## Product title: inventory tracking
-## Product Desciption: inventory form where data is input via modal. Then saved to local storage. input data can be recalled from local storage where it will be displayed on webpage. 
+## Product Desciption: 
+inventory form where data is input via modal. Then saved to local storage. input data can be recalled from local storage where it will be displayed on webpage. 
 The purpose of this application could be used to track location and quantity of inventory for a warehouse, business, etc. 
 
 
