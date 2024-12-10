@@ -1,1 +1,52 @@
-
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Inventory Management</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+  </head>
+  <body>
+  <header>
+    Enter Inventory Here:
+    <form>
+        <label>Product</label>
+        <input id="product"></input>
+        <label>Quantity</label>
+        <input id="quantity"></input>
+        <label>Category</label>
+        <input id="category"></input>
+        <label>Location</label>
+        <input id="location"></input>
+    </form>
+  </header>  
+  <section class="section">
+    <div class="container" id="productsByCategory">
+      <h1 class="title">
+        Tracker 1
+      </h1>
+      <p class="subtitle">
+        This is the section for <strong>"dynamic counters"</strong>
+      </p>
+    </div>
+    <div class="container" id="orderSoon">
+        <h1 class="title">
+          Tracker 2
+        </h1>
+        <p class="subtitle">
+          This is the section for <strong>"dynamic counters"</strong>
+        </p>
+      </div>
+  </section>
+  <section>
+    <aside>
+      <ul>
+        <li>Add Inventory</li>
+        <li>Remove Inventory</li>
+        <li>View Inventory</li>
+        <li>Order Inventory</li>
+      </ul>
+    </aside>
+  </section>
+  </body>
+</html>
