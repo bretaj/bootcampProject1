@@ -1,0 +1,17 @@
+USER STORY
+
+AS AN inventory manager, I want to monitor, and adjust inventory quantities
+SO THAT i am able to order needed items 
+
+
+ACCEPTANCE CRITERIA
+
+WHEN I visit my inventory management application
+AND there is a sidebar with options to: add, remove, view, and order inventory
+AND there are two dynamic displays that show the number of current inventory by category (ex: 3 brushes), 
+and items needing to be ordered
+WHEN I click on the "add inventory" button, I am taken to a customizable form where I can input "category", "product name", "quantity", "location".
+WHEN I submit, I am presented with a confirmation message, asking whether I want to add more inventory, or am finished adding inventory
+WHEN I hit "finished, I am taken to the 
+WHEN I click on the remove inventory button, 
+
