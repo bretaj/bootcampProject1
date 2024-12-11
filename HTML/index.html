@@ -7,12 +7,23 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
   </head>
   <body>
-  <header>
+  <header class="title">
     Inventory Management
-  </header>  
+  </header> 
+  <main>
+  
+    <aside class="menu">
+        <ul class="menu-list">
+          <li><a>Add Inventory</a></li>
+          <li><a>Remove Inventory</a></li>
+          <li><a href="inventory.html">View Inventory</a></li>
+          <li><a href="http://www.walmart.com">Order Inventory</a></li>
+        </ul>
+      </aside>
+    
   <section class="section">
-    <div class="container">
-      <h1 class="subtitle">
+    <div class="box">
+      <h1 class="title">
         Product Categories Quantity
       </h1>
       <p id="numberOfCategories">
@@ -22,8 +33,8 @@
         Total Number of Product Categories within the Inventory
       </p>
     </div>
-    <div class="container">
-        <h1 class="subtitle">
+    <div class="box">
+        <h1 class="title">
           List of Categories
         </h1>
         <p  id="categorieslist">
@@ -33,9 +44,9 @@
           All Product Categories within the Inventory
         </p>
       </div>
-      <div class="container" >
-        <h1 class="subtitle">
-          Products to be ordered
+      <div class="box" >
+        <h1 class="title">
+          Products to be Ordered
         </h1>
         <p id="orderSoon">
             0
@@ -45,16 +56,10 @@
         </p>
       </div>
   </section>
-  <section>
-    <aside>
-      <ul>
-        <li>Add Inventory</li>
-        <li>Remove Inventory</li>
-        <li>View Inventory</li>
-        <li>Order Inventory</li>
-      </ul>
-    </aside>
-  </section>
+</main>
+<footer class="footer">
+   (Footer)
+</footer>
   </body>
 </html>
 
