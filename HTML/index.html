@@ -11,20 +11,37 @@
     Inventory Management
   </header>  
   <section class="section">
-    <div class="container" id="productsByCategory">
-      <h1 class="title">
-        Tracker 1
+    <div class="container">
+      <h1 class="subtitle">
+        Product Categories Quantity
       </h1>
-      <p class="subtitle">
-        This is the section for <strong>"dynamic counters"</strong>
+      <p id="numberOfCategories">
+        0
+      </p>
+      <p>
+        Total Number of Product Categories within the Inventory
       </p>
     </div>
-    <div class="container" id="orderSoon">
-        <h1 class="title">
-          Tracker 2
+    <div class="container">
+        <h1 class="subtitle">
+          List of Categories
         </h1>
-        <p class="subtitle">
-          This is the section for <strong>"dynamic counters"</strong>
+        <p  id="categorieslist">
+            0
+        </P>
+        <p>
+          All Product Categories within the Inventory
+        </p>
+      </div>
+      <div class="container" >
+        <h1 class="subtitle">
+          Products to be ordered
+        </h1>
+        <p id="orderSoon">
+            0
+        </p>
+        <p>
+          All products below PAR
         </p>
       </div>
   </section>
@@ -51,4 +68,6 @@
     <input id="category"></input>
     <label>Location</label>
     <input id="location"></input>
+    <label>PAR</label>
+    <input id="par"></input>
 </form>
