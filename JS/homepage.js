@@ -1,5 +1,5 @@
-//MODAL SCRIPT?
-
+//MODAL SCRIPT
+// this is the code if we wanted to use a modal for the input form
 document.addEventListener('DOMContentLoaded', () => {
     // Functions to open and close a modal
     function openModal($el) {
@@ -42,3 +42,40 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+  // END MODAL SCRIPT
+  // variables for grabbing stuff from HTML
+const catInput = document.querySelector('#productCat')
+const nameInput = document.querySelector('#productName')
+const quantInput = document.querySelector('#productQuant')
+const parInput = document.querySelector('#par')
+const locationInput = document.querySelector('#location')
+const inventoryForm = document.querySelector('#inventoryForm')
+const errorMsg = document.querySelector('#error')
+
+
+// function for form submission, storing in local storage, then redirects to inventory page
+
+function submit(event) {
+    event.preventDefault();
+
+    if (catInput.value=='' || nameInput.value == '' || quantInput.value == '' || parInput.value == '' || locationInput.value == '') {
+        errorMsg.textContent = 'Please complete the form.'
+        return
+    }
+    const inventory = {
+        Product Category: catInput.value,
+        Product Name: nameInput.value,
+        Product Quantity: quantInput.value,
+        Minimum Product Required: parInput.value,
+        Product Location: locationInput.value,
+    }
+
+    storeLocalStorage(inventory);
+
+    redirectPage("inventory.html")
+}
+
+// eventlistener for submit button on form
+inventoryForm.addEventListener('submit', function (event) {
+    submit(event)
+});
