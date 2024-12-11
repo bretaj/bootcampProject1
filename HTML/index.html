@@ -46,50 +46,48 @@
     <div class="modal-background"></div>
 
     <div class="modal-content">
-
       <div class="box">
-      <form id="inventoryForm">
-        <h3>Insert product information</h3>
-        <div class="field">
-          <label class="label">Product Category</label>
-          <div class="control">
-            <input class="input" type="text" id="productCat" placeholder=" e.g produce">
-          </div>
-        </div>
-        <div class="field">
-          <label class="label">Product Name</label>
+        <form id="inventoryForm">
+          <h3>Please input product information</h3>
+
           <div class="field">
+            <label class="label">Product Category</label>
+            <input class="input" type="text" id="productCat" placeholder="e.g produce">
+          </div>
+
+          <div class="field">
+            <label class="label">Product Name</label>
             <input class="input" type="text" id="productName" placeholder="e.g apples">
           </div>
-        </div>
-        <div class="field">
-          <label class="label">Product Quantity</label>
+
           <div class="field">
-            <input class="input" type="text" id="productQuant" placeholder="eg. 5">
+            <label class="label">Product Quantity</label>
+            <input class="input" type="text" id="productQuant" placeholder="e.g 5">
           </div>
-        </div>
-        <div class="field">
-          <label class="label">Minimum Quantity</label>
+
           <div class="field">
-            <input class="input" type="text" id="par" placeholder="eg. 5">
+            <label class="label">Minimum Product Required</label>
+            <input class="input" type="text" id="par" placeholder="e.g 10">
           </div>
-        </div>
-        <div class="field">
-          <label class="label">Product Location</label>
+
           <div class="field">
-            <input class="input" type="text" id="location" placeholder="eg. aisle 5">
+            <label class="label">Product Location</label>
+            <input class="input" type="text" id="location" placeholder="e.g aisle 5">
           </div>
-        </div>
-        <div class="field">
-          <button type="submit" id="formsubmit">SUBMIT</button>
+          
+          <button type="submit" id="submit">Submit</button>
           <p id="error"></p>
-      </form>
-        </div>
+        </form>
+      </div>
+    </div>
+  
+    
+    </div>
+
+    <button class="modal-close is-large" aria-label="close"></button>
   </section>
   <!-- trigger for modal -->
-  </div>
   <button class="modal-close is-large" aria-label="close"></button>
-  </div>
   <!-- end modal code -->
 
 </body>
