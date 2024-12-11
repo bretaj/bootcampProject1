@@ -43,6 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
   // END MODAL SCRIPT
+
   // variables for grabbing stuff from HTML
 const catInput = document.querySelector('#productCat')
 const nameInput = document.querySelector('#productName')
@@ -63,11 +64,11 @@ function submit(event) {
         return
     }
     const inventory = {
-        Product Category: catInput.value,
-        Product Name: nameInput.value,
-        Product Quantity: quantInput.value,
-        Minimum Product Required: parInput.value,
-        Product Location: locationInput.value,
+        ProductCategory: catInput.value,
+        ProductName: nameInput.value,
+        ProductQuantity: quantInput.value,
+        MinimumProductRequired: parInput.value,
+        ProductLocation: locationInput.value,
     }
 
     storeLocalStorage(inventory);

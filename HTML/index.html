@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Inventory Management</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
-  </head>
-  <body>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inventory Management</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+</head>
+
+<body>
   <header>
     Inventory Management
-  </header>  
+  </header>
   <section class="section">
     <div class="container" id="productsByCategory">
       <h1 class="title">
@@ -20,92 +22,90 @@
       </p>
     </div>
     <div class="container" id="orderSoon">
-        <h1 class="title">
-          Tracker 2
-        </h1>
-        <p class="subtitle">
-          This is the section for <strong>"dynamic counters"</strong>
-        </p>
-      </div>
+      <h1 class="title">
+        Tracker 2
+      </h1>
+      <p class="subtitle">
+        This is the section for <strong>"dynamic counters"</strong>
+      </p>
+    </div>
   </section>
   <section>
     <aside>
-<!-- trigger for modal -->
+      <!-- trigger for modal -->
       <button class="js-modal-trigger" data-target="modal-js-example">
-         ADD INVENTORY
+        ADD INVENTORY
       </button>
       <p class="menu-label">Remove Inventory</p>
       <p class="menu-label">View Inventory</p>
       <p class="menu-label">Order Inventory</p>
-      </aside>
+    </aside>
   </section>
-<!-- modal -->
+  <!-- modal -->
   <section id="modal-js-example" class="modal">
     <div class="modal-background"></div>
-  
+
     <div class="modal-content">
 
       <div class="box">
-        
-       <h3>Insert product information</h3>   
       <form id="inventoryForm">
+        <h3>Insert product information</h3>
         <div class="field">
           <label class="label">Product Category</label>
           <div class="control">
             <input class="input" type="text" id="productCat" placeholder=" e.g produce">
           </div>
-        </div> 
+        </div>
         <div class="field">
           <label class="label">Product Name</label>
           <div class="field">
-            <input class="input" type="text" id ="productName" placeholder="e.g apples">
-        </div>
+            <input class="input" type="text" id="productName" placeholder="e.g apples">
+          </div>
         </div>
         <div class="field">
           <label class="label">Product Quantity</label>
           <div class="field">
-            <input class="input" type="text" id ="productQuant" placeholder="eg. 5">
-        </div>
+            <input class="input" type="text" id="productQuant" placeholder="eg. 5">
           </div>
+        </div>
         <div class="field">
           <label class="label">Minimum Quantity</label>
           <div class="field">
-            <input class="input" type="text" id ="par" placeholder="eg. 5">
-        </div>
-          </div> 
-          <div class="field">
-            <label class="label">Product Location</label>
-            <div class="field">
-              <input class="input" type="text" id ="location" placeholder="eg. aisle 5">
+            <input class="input" type="text" id="par" placeholder="eg. 5">
           </div>
-            </div> 
+        </div>
+        <div class="field">
+          <label class="label">Product Location</label>
           <div class="field">
-            <button type ="submit" id="formsubmit">SUBMIT</button>
-            <p id="error"></p>
+            <input class="input" type="text" id="location" placeholder="eg. aisle 5">
+          </div>
+        </div>
+        <div class="field">
+          <button type="submit" id="formsubmit">SUBMIT</button>
+          <p id="error"></p>
       </form>
-    </div>
+        </div>
   </section>
-<!-- trigger for modal -->
+  <!-- trigger for modal -->
   </div>
-    <button class="modal-close is-large" aria-label="close"></button>
+  <button class="modal-close is-large" aria-label="close"></button>
   </div>
-<!-- end modal code -->
-  
+  <!-- end modal code -->
+
 </body>
 
-  <script defer src="../JS/homepage.js" type="text/javascript"></script>
+<script defer src="../JS/homepage.js" type="text/javascript"></script>
 
-  <footer class="footer">
-    <div class="content has-text-centered">
-      <p>
-        <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>.
-        The source code is licensed
-        <a href="https://opensource.org/license/mit">MIT</a>. The
-        website content is licensed
-        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0//"
-          >CC BY NC SA 4.0</a>.
-      </p>
-    </div>
-  </footer> 
-  
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+      <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>.
+      The source code is licensed
+      <a href="https://opensource.org/license/mit">MIT</a>. The
+      website content is licensed
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0//">CC BY NC SA 4.0</a>.
+    </p>
+  </div>
+</footer>
+
 </html>
