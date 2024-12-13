@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<<<<<<< HEAD
 
 <head>
   <meta charset="utf-8">
@@ -77,3 +78,92 @@
 
 
 </html>
+=======
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Inventory Management</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+    <link rel="stylesheet" href="../css/modal.css">
+  </head>
+  <body>
+  <header class="title">
+    Inventory Management
+  </header> 
+  <main>
+    <aside class="menu">
+        <ul class="menu-list">
+          <li><a>Add Inventory</a></li>
+          <li><a>Remove Inventory</a></li>
+          <li><a href="inventory.html">View Inventory</a></li>
+          <li><a href="http://www.walmart.com">Order Inventory</a></li>
+        </ul>
+    </aside>
+  <section class="modal hidden"> 
+    <div>
+      <h2>Please Sign In</h2>
+    </div>
+    <input type="text" placeholder="username"/>
+    <input type="text"  placeholder="password"/>
+    <button class="btn">Sign In</button>
+  </section>
+  
+  <div class="overlay hidden"></div>
+
+  <section class="section">
+    <div class="box">
+      <h1 class="title">
+        Product Categories Quantity
+      </h1>
+      <p id="numberOfCategories">
+        0
+      </p>
+      <p>
+        Total Number of Product Categories within the Inventory
+      </p>
+    </div>
+    <div class="box">
+        <h1 class="title">
+          List of Categories
+        </h1>
+        <p  id="categorieslist">
+            0
+        </P>
+        <p>
+          All Product Categories within the Inventory
+        </p>
+      </div>
+      <div class="box" >
+        <h1 class="title">
+          Products to be Ordered
+        </h1>
+        <p id="orderSoon">
+            0
+        </p>
+        <p>
+          All products below PAR
+        </p>
+      </div>
+  </section>
+</main>
+<footer class="footer">
+   (Footer)
+</footer>
+  </body>
+  <script src="../js/modal.js"></script>
+</html>
+
+
+<!-- <form>
+    <label>Product</label>
+    <input id="product"></input>
+    <label>Quantity</label>
+    <input id="quantity"></input>
+    <label>Category</label>
+    <input id="category"></input>
+    <label>Location</label>
+    <input id="location"></input>
+    <label>PAR</label>
+    <input id="par"></input>
+</form>
+>>>>>>> main
