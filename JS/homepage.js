@@ -86,7 +86,7 @@ submitInput.onclick = (event) => {
   const quantInput = document.getElementById('productQuant').value;
   const parInput = document.getElementById('par').value;
   const locationInput = document.getElementById('location').value;
-  if (catInput && nameInput && quantInput && parInput && locationInput) {
+  if (catInput && nameInput && !isNaN(quantInput) && !isNaN(parInput) && locationInput) {
   const storedData = JSON.parse(localStorage.getItem('inputInfo')) || [];
   
     storedData.push({
@@ -97,13 +97,13 @@ submitInput.onclick = (event) => {
     location: locationInput
     })
 
-    inputInfo.push({ 
-    category: catInput, 
-    name: nameInput, 
-    quantity: quantInput, 
-    par: parInput, 
-    location: locationInput
-  });
+  //   inputInfo.push({ 
+  //   category: catInput, 
+  //   name: nameInput, 
+  //   quantity: quantInput, 
+  //   par: parInput, 
+  //   location: locationInput
+  // });
 
   localStorage.setItem('inputInfo', JSON.stringify(storedData));
 
@@ -115,12 +115,23 @@ submitInput.onclick = (event) => {
   alert('please fill out form');
 }
   };
-
-    invButton.onclick = () => {
-      if (inputInfo.length > 0) {
-      localStorage.setItem(`inputInfo`, JSON.stringify(inputInfo));
-      window.location.href = 'inventory.html';
-    }};
+  invButton.onclick = () => {
+    console.log('View Inventory button clicked'); // Debugging log
+    const storedData = JSON.parse(localStorage.getItem('inputInfo')) || [];
+    
+    if (storedData.length > 0) {
+      console.log('Data exists, redirecting to inventory.html');
+      window.location.href = './inventory.html'; // Adjusted path
+    } else {
+      alert('No product data available. Redirecting anyway...');
+      window.location.href = './inventory.html'; // Adjusted path
+    }
+  };
+    // invButton.onclick = () => {
+    //   if (inputInfo.length > 0) {
+    //   localStorage.setItem(`inputInfo`, JSON.stringify(inputInfo));
+    //   window.location.href = 'inventory.html';
+    // }};
 
 //   let redirectURL = '';
 
