@@ -56,8 +56,8 @@ const errorMsg = document.querySelector('#error')
 
 // function for form submission, storing in local storage, then redirects to inventory page
 
-function submit(event) {
-    event.preventDefault();
+function submit() {
+    // event.preventDefault();
 
     if (catInput.value=='' || nameInput.value == '' || quantInput.value == '' || parInput.value == '' || locationInput.value == '') {
         errorMsg.textContent = 'Please complete the form.'
@@ -71,12 +71,21 @@ function submit(event) {
         ProductLocation: locationInput.value,
     }
 
-    storeLocalStorage(inventory);
+    localStorage.setItem(`inventory`, JSON.stringify(inventory));
 
+  // storeLocalStorage(inventory);
+
+  let redirectURL = '';
+
+  const redirectPage = function (url) {
+  redirectURL = url;
+  location.assign(url);
+};
     redirectPage("inventory.html")
 }
 
 // eventlistener for submit button on form
 inventoryForm.addEventListener('submit', function (event) {
-    submit(event)
+  event.preventDefault();  
+  submit()
 });
