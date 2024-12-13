@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../css/modal.css">
   </head>
   <body>
-  <header class="title">
+  <header class="header , title">
     Inventory Management
   </header> 
 
@@ -27,19 +27,21 @@
   
     <aside class="menu">
         <ul class="menu-list">
-          <li><a>Add Inventory</a></li>
+          <li class="js-modal-trigger"><a href="modal-js-example">Add Inventory</a></li>
           <li><a>Remove Inventory</a></li>
           <li><a href="inventory.html">View Inventory</a></li>
           <li><a href="http://www.walmart.com">Order Inventory</a></li>
         </ul>
       </aside>
     
-  <section class="section">
+      
+
+  <section class="section , is-flex, is-flex-wrap">
     <div class="box">
       <h1 class="title">
         Product Categories Quantity
       </h1>
-      <p id="numberOfCategories">
+      <p id="categoryCounter">
         0
       </p>
       <p>
@@ -48,16 +50,16 @@
     </div>
     <div class="box">
         <h1 class="title">
-          List of Categories
+          Individual Products Quantity
         </h1>
-        <p  id="categorieslist">
+        <p id="productCounter">
             0
         </P>
         <p>
-          All Product Categories within the Inventory
+          Total Number of Unique Products within the Inventory
         </p>
-      </div>
-      <div class="box" >
+    </div>
+    <div class="box" >
         <h1 class="title">
           Products to be Ordered
         </h1>
@@ -67,7 +69,7 @@
         <p>
           All products below PAR
         </p>
-      </div>
+    </div>
   </section>
 </main>
 <footer class="footer">
@@ -75,6 +77,7 @@
 </footer>
   </body>
   <script src="../js/modal.js"></script>
+  <script src="../js/homepage.js"></script>
 </html>
 
 
