@@ -45,47 +45,94 @@ document.addEventListener('DOMContentLoaded', () => {
   // END MODAL SCRIPT
 
   // variables for grabbing stuff from HTML
-const catInput = document.querySelector('#productCat')
-const nameInput = document.querySelector('#productName')
-const quantInput = document.querySelector('#productQuant')
-const parInput = document.querySelector('#par')
-const locationInput = document.querySelector('#location')
-const inventoryForm = document.querySelector('#inventoryForm')
-const errorMsg = document.querySelector('#error')
+// const catInput = document.querySelector('#productCat')
+// const nameInput = document.querySelector('#productName')
+// const quantInput = document.querySelector('#productQuant')
+// const parInput = document.querySelector('#par')
+// const locationInput = document.querySelector('#location')
+// const inventoryForm = document.querySelector('#inventoryForm')
+// const submitInput = document.querySelector('#submit')
+// const invButton = document.querySelector('#viewInt')
+// const errorMsg = document.querySelector('#error')
 
 
 // function for form submission, storing in local storage, then redirects to inventory page
 
-function submit() {
-    // event.preventDefault();
+// function submit() {
 
-    if (catInput.value=='' || nameInput.value == '' || quantInput.value == '' || parInput.value == '' || locationInput.value == '') {
-        errorMsg.textContent = 'Please complete the form.'
-        return
-    }
-    const inventory = {
-        ProductCategory: catInput.value,
-        ProductName: nameInput.value,
-        ProductQuantity: quantInput.value,
-        MinimumProductRequired: parInput.value,
-        ProductLocation: locationInput.value,
-    }
+//     if (catInput.value=='' || nameInput.value == '' || quantInput.value == '' || parInput.value == '' || locationInput.value == '') {
+//         errorMsg.textContent = 'Please complete the form.'
+//         return
+//     }
+//     const inventory = {
+//         ProductCategory: catInput.value,
+//         ProductName: nameInput.value,
+//         ProductQuantity: quantInput.value,
+//         MinimumProductRequired: parInput.value,
+//         ProductLocation: locationInput.value,
+//     }
+//   }
+const submitInput = document.getElementById('submit');
+const invButton = document.getElementById('viewInt');
+const modalForm = document.getElementById('inventoryForm');
 
-    localStorage.setItem(`inventory`, JSON.stringify(inventory));
+const inputInfo = [];
 
-  // storeLocalStorage(inventory);
+submitInput.onclick = (event) => {
+  event.preventDefault();
 
-  let redirectURL = '';
+  const catInput = document.getElementById('productCat').value;
+  const nameInput = document.getElementById('productName').value;
+  const quantInput = document.getElementById('productQuant').value;
+  const parInput = document.getElementById('par').value;
+  const locationInput = document.getElementById('location').value;
+  if (catInput && nameInput && quantInput && parInput && locationInput) {
+  const storedData = JSON.parse(localStorage.getItem('inputInfo')) || [];
+  
+    storedData.push({
+    category: catInput, 
+    name: nameInput, 
+    quantity: quantInput, 
+    par: parInput, 
+    location: locationInput
+    })
 
-  const redirectPage = function (url) {
-  redirectURL = url;
-  location.assign(url);
-};
-    redirectPage("inventory.html")
+    inputInfo.push({ 
+    category: catInput, 
+    name: nameInput, 
+    quantity: quantInput, 
+    par: parInput, 
+    location: locationInput
+  });
+
+  localStorage.setItem('inputInfo', JSON.stringify(storedData));
+
+  if (modalForm) {
+    modalForm.reset();
+  }
+  alert('product input successful');
+} else {
+  alert('please fill out form');
 }
+  };
+
+    invButton.onclick = () => {
+      if (inputInfo.length > 0) {
+      localStorage.setItem(`inputInfo`, JSON.stringify(inputInfo));
+      window.location.href = 'inventory.html';
+    }};
+
+//   let redirectURL = '';
+
+//   const redirectPage = function (url) {
+//   redirectURL = url;
+//   location.assign(url);
+// };
+//     redirectPage("inventory.html")
+
 
 // eventlistener for submit button on form
-inventoryForm.addEventListener('submit', function (event) {
-  event.preventDefault();  
-  submit()
-});
+// inventoryForm.addEventListener('submit', function (event) {
+//   event.preventDefault();  
+//   submit()
+// });
