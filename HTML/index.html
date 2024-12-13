@@ -1,5 +1,7 @@
-<!DOCTYPE html>
-<html>
+
+  
+
+</html>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,10 +10,22 @@
     <link rel="stylesheet" href="../css/modal.css">
   </head>
   <body>
-  <header>
+  <header class="title">
     Inventory Management
-  </header>
-  <section class="modal hidden"> 
+  </header> 
+  <main>
+    <aside class="menu">
+        <ul class="menu-list">
+          <li> <button class="js-modal-trigger" data-target="modal-js-example">
+            ADD INVENTORY
+          </button></li>
+          <li><a>Remove Inventory</a></li>
+          <li><a href="inventory.html">View Inventory</a></li>
+          <li><a href="http://www.walmart.com">Order Inventory</a></li>
+        </ul>
+    </aside>
+    <!-- sign-in modal -->
+  <section class="modal1 hidden"> 
     <div>
       <h2>Please Sign In</h2>
     </div>
@@ -19,14 +33,58 @@
     <input type="text"  placeholder="password"/>
     <button class="btn">Sign In</button>
   </section>
+  <!-- end sign-in modal -->
+  <!-- form modal -->
+  <section id="modal-js-example" class="modal">
+    <div class="modal-background"></div>
+
+    <div class="modal-content">
+      <div class="box">
+        <form id="inventoryForm">
+          <h3>Please input product information</h3>
+
+          <div class="field">
+            <label class="label">Product Category</label>
+            <input class="input" type="text" id="productCat" placeholder="e.g produce">
+          </div>
+
+          <div class="field">
+            <label class="label">Product Name</label>
+            <input class="input" type="text" id="productName" placeholder="e.g apples">
+          </div>
+
+          <div class="field">
+            <label class="label">Product Quantity</label>
+            <input class="input" type="text" id="productQuant" placeholder="e.g 5">
+          </div>
+
+          <div class="field">
+            <label class="label">Minimum Product Required</label>
+            <input class="input" type="text" id="par" placeholder="e.g 10">
+          </div>
+
+          <div class="field">
+            <label class="label">Product Location</label>
+            <input class="input" type="text" id="location" placeholder="e.g aisle 5">
+          </div>
+          
+          <button type="submit" id="submit">Submit</button>
+          <p id="error"></p>
+        </form>
+      </div>
+    </div>
   
+  <button class="modal-close is-large" aria-label="close"></button>
+  </section>
+  <!-- end form modal -->
+  <!-- trigger for modal -->
+  <button class="modal-close is-large" aria-label="close"></button>
+  <!-- end all modal code -->
   <div class="overlay hidden"></div>
-  
-  
-  
+
   <section class="section">
-    <div class="container">
-      <h1 class="subtitle">
+    <div class="box">
+      <h1 class="title">
         Product Categories Quantity
       </h1>
       <p id="numberOfCategories">
@@ -36,8 +94,8 @@
         Total Number of Product Categories within the Inventory
       </p>
     </div>
-    <div class="container">
-        <h1 class="subtitle">
+    <div class="box">
+        <h1 class="title">
           List of Categories
         </h1>
         <p  id="categorieslist">
@@ -47,9 +105,9 @@
           All Product Categories within the Inventory
         </p>
       </div>
-      <div class="container" >
-        <h1 class="subtitle">
-          Products to be ordered
+      <div class="box" >
+        <h1 class="title">
+          Products to be Ordered
         </h1>
         <p id="orderSoon">
             0
@@ -59,30 +117,12 @@
         </p>
       </div>
   </section>
-  <section>
-    <aside>
-      <ul>
-        <li>Add Inventory</li>
-        <li>Remove Inventory</li>
-        <li>View Inventory</li>
-        <li>Order Inventory</li>
-      </ul>
-    </aside>
-  </section>
+</main>
+<footer class="footer">
+   (Footer)
+</footer>
   </body>
   <script src="../js/modal.js"></script>
+  <script src="../JS/homepage.js" type="text/javascript"></script>
 </html>
 
-
-<!-- <form>
-    <label>Product</label>
-    <input id="product"></input>
-    <label>Quantity</label>
-    <input id="quantity"></input>
-    <label>Category</label>
-    <input id="category"></input>
-    <label>Location</label>
-    <input id="location"></input>
-    <label>PAR</label>
-    <input id="par"></input>
-</form>
