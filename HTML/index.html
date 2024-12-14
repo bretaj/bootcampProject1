@@ -5,13 +5,14 @@
     <title>Inventory Management</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
     <link rel="stylesheet" href="../css/modal.css">
+    <link rel="stylesheet" href="../css/style.css">
   </head>
   <body>
   <header class="title">
-    Inventory Management
+    Inventory Managements
   </header> 
   <main>
-    <aside class="menu">
+    <aside class="menu" id="float-left">
         <ul class="menu-list">
           <li> <button class="js-modal-trigger" data-target="modal-js-example">
             ADD INVENTORY
@@ -64,8 +65,8 @@
             <label class="label">Product Location</label>
             <input class="input" type="text" id="location" placeholder="e.g aisle 5">
           </div>
-          
-          <button type="button" id="submit">Submit</button>
+          <button class="btn">Next Item</button>
+          <button type="button" class="btn" id="submit">Submit</button>
           <button type="button" id="viewInt">View Inventory</button>
           <p id="error"></p>
         </form>
