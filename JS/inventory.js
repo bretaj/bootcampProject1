@@ -1,13 +1,16 @@
 //Test Object Stored in Local Storage
 const inventoryTest = [
-    {category: 'Vodka', productName: 'Grey Goose', quantity: 33, par: 5, location: 'Bar 3'},
-    {category: 'Whiskey', productName: 'Pendleton', quantity: 10, par: 3, location: 'Bar 1'},
-    {category: 'Tequila', productName: 'Casa Migos', quantity: 10, par: 4, location: 'Bar 3'},
-    {category: 'Vodka', productName: 'Smirnoff', quantity: 20, par: 8, location: 'Bar 2'},
-    {category: 'Gin', productName: 'Heendricks', quantity: 13, par: 2, location: 'Bar 2'}
+    {category: 'Vodka', name: 'Grey Goose', quantity: 33, par: 5, location: 'Bar 3'},
+    {category: 'Whiskey', name: 'Pendleton', quantity: 10, par: 3, location: 'Bar 1'},
+    {category: 'Tequila', name: 'Casa Migos', quantity: 10, par: 4, location: 'Bar 3'},
+    {category: 'Vodka', name: 'Smirnoff', quantity: 20, par: 8, location: 'Bar 2'},
+    {category: 'Gin', name: 'Heendricks', quantity: 13, par: 2, location: 'Bar 2'}
 ]
 
 localStorage.setItem('inventoryTest', JSON.stringify(inventoryTest));
+// End of Test Object
+
+
 
 //Get the Table Element
 //const tableBodyEl = document.querySelector('.table');
@@ -24,7 +27,7 @@ function createEl(product){
     const locEl = document.createElement('td');
 
     catEl.textContent = product.category;
-    nameEl.textContent = product.productName;
+    nameEl.textContent = product.name;
     qtyEl.textContent = product.quantity;
     parEl.textContent = product.par;
     locEl.textContent = product.location;
@@ -39,7 +42,8 @@ function createEl(product){
 
 
 function readStorage(){
-    return inventoryList = JSON.parse(localStorage.getItem('inventoryTest'));
+    //Read conents of inputInfo (name of key stored by modal)
+    return inventoryList = JSON.parse(localStorage.getItem('inputInfo'));
 }
 
 function renderInventory(){
