@@ -1,13 +1,13 @@
 //Test Object Stored in Local Storage
-const productTest = {
-    category: 'Vodka',
-    productName: 'Grey Goose',
-    quantity: 33,
-    par: 5,
-    location: 'Bar 3'
-}
+const inventoryTest = [
+    {category: 'Vodka', productName: 'Grey Goose', quantity: 33, par: 5, location: 'Bar 3'},
+    {category: 'Whiskey', productName: 'Pendleton', quantity: 10, par: 3, location: 'Bar 1'},
+    {category: 'Tequila', productName: 'Casa Migos', quantity: 10, par: 4, location: 'Bar 3'},
+    {category: 'Vodka', productName: 'Smirnoff', quantity: 20, par: 8, location: 'Bar 2'},
+    {category: 'Gin', productName: 'Heendricks', quantity: 13, par: 2, location: 'Bar 2'}
+]
 
-localStorage.setItem('productTest', JSON.stringify(productTest));
+localStorage.setItem('inventoryTest', JSON.stringify(inventoryTest));
 
 //Get the Table Element
 //const tableBodyEl = document.querySelector('.table');
@@ -39,12 +39,14 @@ function createEl(product){
 
 
 function readStorage(){
-    return inventoryList = JSON.parse(localStorage.getItem('productTest'));
+    return inventoryList = JSON.parse(localStorage.getItem('inventoryTest'));
 }
 
 function renderInventory(){
     let inventory = readStorage();
-    createEl(inventory);
+    for(let i = 0; i < inventory.length; i++){
+        createEl(inventory[i]);
+    }   
 }
 
 renderInventory();
