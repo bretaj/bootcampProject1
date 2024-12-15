@@ -47,6 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
 const submitInput = document.getElementById('submit');
 const invButton = document.getElementById('viewInt');
 const modalForm = document.getElementById('inventoryForm');
+const errorMessage = document.getElementById('error');
 
 const inputInfo = [];
 
@@ -73,21 +74,27 @@ submitInput.onclick = (event) => {
 
   if (modalForm) {
     modalForm.reset();
+    }
+    
+    errorMessage.textContent = 'Product input successful';
+    errorMessage.style.color = 'black';
+    
+  } else {
+    errorMessage.textContent = 'Please fill out the form';
+    errorMessage.style.color = 'red';
   }
-  alert('product input successful');
-} else {
-  alert('please fill out form');
 }
-  };
+
+  
   invButton.onclick = () => {
     console.log('View Inventory button clicked'); // Debugging log
     const storedData = JSON.parse(localStorage.getItem('inputInfo')) || [];
     
     if (storedData.length > 0) {
-      console.log('Data exists, redirecting to inventory.html');
+      // console.log('Data exists, redirecting to inventory.html');
       window.location.href = './inventory.html'; // Adjusted path
     } else {
-      alert('No product data available. Redirecting anyway...');
+      // alert('No product data available. Redirecting anyway...');
       window.location.href = './inventory.html'; // Adjusted path
     }
-  };
+  }
