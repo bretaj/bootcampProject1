@@ -110,13 +110,19 @@ h2 {
 
   #submit, #viewInt {
     color: white;
-    background-color: black;
+    background-color: rgb(0, 161, 135);
     padding: 0.3rem;
     border-radius: 0.25rem;
     transition: background-color 0.3s;
   }
 
-  /* the below will not work on mobile */
-  #submit:hover, #viewInt:hover {
-    background-color: rgb(245, 225, 35);
+  /* buttons slightly shrink and change color when pressed*/
+  #submit:active, #viewInt:active {
+    background-color: rgb(4, 114, 96);
+    transform:  scale(0.90);
   }
+
+  /* the below will not work on mobile */
+  /* #submit:hover, #viewInt:hover {
+    background-color: rgb(245, 225, 35);
+  } */
