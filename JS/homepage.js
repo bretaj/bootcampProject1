@@ -78,7 +78,6 @@ submitInput.onclick = (event) => {
     
     errorMessage.textContent = 'Product input successful';
     errorMessage.style.color = 'black';
-    
   } else {
     errorMessage.textContent = 'Please fill out the form';
     errorMessage.style.color = 'red';
@@ -87,14 +86,12 @@ submitInput.onclick = (event) => {
 
   
   invButton.onclick = () => {
-    console.log('View Inventory button clicked'); // Debugging log
+    console.log('View Inventory button clicked');
     const storedData = JSON.parse(localStorage.getItem('inputInfo')) || [];
     
     if (storedData.length > 0) {
-      // console.log('Data exists, redirecting to inventory.html');
-      window.location.href = './inventory.html'; // Adjusted path
+      window.location.href = './inventory.html';
     } else {
-      // alert('No product data available. Redirecting anyway...');
-      window.location.href = './inventory.html'; // Adjusted path
+      window.location.href = './inventory.html'; 
     }
   }
