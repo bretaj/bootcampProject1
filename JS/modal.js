@@ -18,4 +18,8 @@ const openModal = function () {
 };
 
 window.addEventListener('load', openModal);
+//End of sign-in modal
+
+
+
 
