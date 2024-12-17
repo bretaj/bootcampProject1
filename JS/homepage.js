@@ -1,43 +1,3 @@
-//Counters Script
-//Test inventory array (needs to be edited to get from localStorage)
-const inventory = [
-  { product: 'Apples', category: 'food', quantity: 2, location: 'H4', par: 3 },
-  { product: 'Shovels', category: 'tools', quantity: 3, location: 'F3', par: 3 },
-  { product: 'Hammers', category: 'tools', quantity: 3, location: 'D4', par: 3 },
-  { product: 'Bananas', category: 'food', quantity: 2, location: 'F9', par: 3 },
-  { product: 'Toothpaste', category: 'toiletries', quantity: 3, location: 'B2', par: 3 },
-  { product: 'Brushes', category: 'toiletries', quantity: 2, location: 'A1', par: 3 },
-];
-
-//Products under PAR List
-const needToBeOrdered = inventory.filter(product => product.par > product.quantity);
-
-const  belowParList = document.querySelector('#orderSoon');
-needToBeOrdered.forEach(obj => {
-  const li = document.createElement("li");
-  li.textContent= obj.product;
-  belowParList.appendChild(li);
-});
-
-//Category Counter
-const numberOfCategories = inventory.filter((obj, index, arr) => {
-  return arr.map(mapObj => mapObj.category).indexOf(obj.category) === index;
-});
-const categoryNumber =(numberOfCategories.length)
-const categoryCounter = document.querySelector('#categoryCounter')
-
-categoryCounter.textContent = categoryNumber
-
-//Product Counter
-const numberOfProducts = inventory.filter((obj, index, arr) => {
-  return arr.map(mapObj => mapObj.product).indexOf(obj.product) === index;
-});
-const ProductNumber =(numberOfProducts.length)
-const ProductCounter = document.querySelector('#productCounter')
-
-ProductCounter.textContent = ProductNumber
-
-
 //MODAL SCRIPT
 // this is the code if we wanted to use a modal for the input form
 document.addEventListener('DOMContentLoaded', () => {
@@ -187,3 +147,39 @@ submitInput.onclick = (event) => {
 //   event.preventDefault();  
 //   submit()
 // });
+
+//Homepage Trackers Script
+//Products under PAR List
+function orderSoon() {
+const inventory = JSON.parse(localStorage.getItem('inputInfo'));
+const needToBeOrdered = inventory.filter(name => name.par > name.quantity);
+
+const belowParList = document.querySelector('#orderSoon');
+needToBeOrdered.forEach(obj => {
+  const li = document.createElement("li");
+  li.textContent= obj.name;
+  belowParList.appendChild(li);
+});
+};
+orderSoon();
+
+//define inventory globally
+const inventory = JSON.parse(localStorage.getItem('inputInfo'));
+
+//Category Counter
+const numberOfCategories = inventory.filter((obj, index, arr) => {
+  return arr.map(mapObj => mapObj.category).indexOf(obj.category) === index;
+});
+const categoryNumber =(numberOfCategories.length);
+const categoryCounter = document.querySelector('#categoryCounter');
+
+categoryCounter.textContent = categoryNumber;
+
+//Product Counter
+const numberOfProducts = inventory.filter((obj, index, arr) => {
+  return arr.map(mapObj => mapObj.name).indexOf(obj.name) === index;
+});
+const ProductNumber =(numberOfProducts.length)
+const ProductCounter = document.querySelector('#productCounter')
+
+ProductCounter.textContent = ProductNumber;
