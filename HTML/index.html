@@ -1,7 +1,4 @@
-
-  
-
-</html>
+<html>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,10 +9,10 @@
   </head>
   <body>
   <header class="title">
-    Inventory Management
+    Inventory Managements
   </header> 
   <main>
-    <aside id="aside" class="menu">
+    <aside class="menu" id="float-left">
         <ul class="menu-list">
           <li> <button class="js-modal-trigger" data-target="modal-js-example">
             ADD Inventory
@@ -25,7 +22,7 @@
           <li><a href="http://www.walmart.com">ORDER Inventory</a></li>
         </ul>
     </aside>
-    <!-- sign-in modal -->
+  <!-- sign-in modal -->
   <section class="modal1 hidden"> 
     <div>
       <h2>Please Sign In</h2>
@@ -68,8 +65,9 @@
             <label class="label">Product Location</label>
             <input class="input" type="text" id="location" placeholder="e.g aisle 5">
           </div>
-          
-          <button type="submit" id="submit">Submit</button>
+          <button class="btn">Next Item</button>
+          <button type="button" class="btn" id="submit">Submit</button>
+          <button type="button" id="viewInt">View Inventory</button>
           <p id="error"></p>
         </form>
       </div>
