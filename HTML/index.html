@@ -8,20 +8,21 @@
     <title>Inventory Management</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
     <link rel="stylesheet" href="../css/modal.css">
+    <link rel="stylesheet" href="../css/style.css">
   </head>
   <body>
   <header class="title">
     Inventory Management
   </header> 
   <main>
-    <aside class="menu">
+    <aside id="aside" class="menu">
         <ul class="menu-list">
           <li> <button class="js-modal-trigger" data-target="modal-js-example">
-            ADD INVENTORY
+            ADD Inventory
           </button></li>
-          <li><a>Remove Inventory</a></li>
-          <li><a href="inventory.html">View Inventory</a></li>
-          <li><a href="http://www.walmart.com">Order Inventory</a></li>
+          <li><a>REMOVE Inventory</a></li>
+          <li><a href="inventory.html">VIEW Inventory</a></li>
+          <li><a href="http://www.walmart.com">ORDER Inventory</a></li>
         </ul>
     </aside>
     <!-- sign-in modal -->
@@ -78,16 +79,18 @@
   </section>
   <!-- end form modal -->
   <!-- trigger for modal -->
-  <button class="modal-close is-large" aria-label="close"></button>
+
+  <!-- <button class="modal-close is-large" aria-label="close"></button> -->
+
   <!-- end all modal code -->
   <div class="overlay hidden"></div>
 
-  <section class="section">
+  <section id="trackers" class="section">
     <div class="box">
       <h1 class="title">
         Product Categories Quantity
       </h1>
-      <p id="numberOfCategories">
+      <p id="categoryCounter">
         0
       </p>
       <p>
@@ -96,22 +99,21 @@
     </div>
     <div class="box">
         <h1 class="title">
-          List of Categories
+          Individual Products Quantity
         </h1>
-        <p  id="categorieslist">
+        <p  id="productCounter">
             0
         </P>
         <p>
-          All Product Categories within the Inventory
+          Total Number of Unique Products within the Inventory
         </p>
       </div>
       <div class="box" >
         <h1 class="title">
-          Products to be Ordered
+          Products to be Ordered Soon
         </h1>
-        <p id="orderSoon">
-            0
-        </p>
+        <ul id="orderSoon">
+        </ul>
         <p>
           All products below PAR
         </p>

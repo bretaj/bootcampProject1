@@ -1,1 +1,9 @@
+#trackers {
+    width: 70%;
+    justify-self: end;
+}
 
+#aside {
+    display:flex;
+    width:29%;
+}
