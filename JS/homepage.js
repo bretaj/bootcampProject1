@@ -2,8 +2,8 @@
 //Products under PAR List
 function orderSoon() {
 const inventory = JSON.parse(localStorage.getItem('inputInfo'));
-const needToBeOrdered = inventory.filter(name => name.par > name.quantity);
-
+const needToBeOrdered = inventory.filter(name => parseInt(name.par) > parseInt(name.quantity));
+console.log()
 const belowParList = document.querySelector('#orderSoon');
 needToBeOrdered.forEach(obj => {
   const li = document.createElement("li");
