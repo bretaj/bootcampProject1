@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="../css/style.css">
   </head>
   <body>
-  <header class="title">
-    Inventory Managements
+  <header class="header , title">
+    Inventory Management
   </header> 
   <main>
     <aside class="menu" id="float-left">
@@ -36,6 +36,20 @@
   <section id="modal-js-example" class="modal">
     <div class="modal-background"></div>
 
+  <main>
+  
+    <aside class="menu">
+        <ul class="menu-list">
+          <li class="js-modal-trigger"><a href="modal-js-example">Add Inventory</a></li>
+          <li><a>Remove Inventory</a></li>
+          <li><a href="inventory.html">View Inventory</a></li>
+          <li><a href="http://www.walmart.com">Order Inventory</a></li>
+        </ul>
+      </aside>
+    
+      
+
+  <section class="section , is-flex, is-flex-wrap">
     <div class="modal-content">
       <div class="box">
         <form id="inventoryForm">
@@ -89,6 +103,7 @@
         Product Categories Quantity
       </h1>
       <p id="categoryCounter">
+      <p id="categoryCounter">
         0
       </p>
       <p>
@@ -99,14 +114,14 @@
         <h1 class="title">
           Individual Products Quantity
         </h1>
-        <p  id="productCounter">
+        <p id="productCounter">
             0
         </P>
         <p>
           Total Number of Unique Products within the Inventory
         </p>
-      </div>
-      <div class="box" >
+    </div>
+    <div class="box" >
         <h1 class="title">
           Products to be Ordered Soon
         </h1>
@@ -115,7 +130,7 @@
         <p>
           All products below PAR
         </p>
-      </div>
+    </div>
   </section>
 </main>
 <footer class="footer">
@@ -123,6 +138,7 @@
 </footer>
   </body>
   <script src="../js/modal.js"></script>
+  <script src="../js/homepage.js"></script>
   <script src="../JS/homepage.js" type="text/javascript"></script>
 </html>
 
