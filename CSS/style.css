@@ -1,12 +1,23 @@
+
 /* 
 aside {
+
+#trackers {
+    width: 70%;
+    justify-self: end;
+}
+
+
+/* aside {
   flex: 1;
   background-color: #b9c6ae;
   padding: 80px;
   text-align: left;
   float: left;
+
 } */
 
 .footer {
   text-align: center;
 }
+
