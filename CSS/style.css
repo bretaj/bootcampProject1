@@ -21,3 +21,6 @@ aside {
   text-align: center;
 }
 
+#orderSoon, #productCounter, #categoryCounter {
+  color:hsl(171deg, 100%, 41%)
+}
