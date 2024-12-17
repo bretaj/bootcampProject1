@@ -1,3 +1,4 @@
+// code for sign-in modal
 const modal = document.querySelector(".modal1");
 const overlay = document.querySelector(".overlay");
 const closeModalBtn = document.querySelector(".btn");

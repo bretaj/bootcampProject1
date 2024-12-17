@@ -3,16 +3,54 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Inventory Management</title>
+    <title>Inventory List</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
     <link rel="stylesheet" href="../CSS/inventory.css">
   </head>
+  
   <body>
-  <header>
-    
-  </header>  
-  <section>
-
-  </section>
+  <header class="hero is-primary">
+    <div class="my-5 mx-3">
+      <h1 class="title">Inventory Management</h1>
+    </div>
+  </header>
+  <main>
+    <div class="columns">
+      <!-- First Column: Sidebar -->
+      <div class="column is-1">
+        <aside class="menu">
+          <ul class="menu-list is-uppercase has-text-weight-bold">
+            <li><a href="index.html">Dashboard</a></li>
+            <li> <button class="js-modal-trigger has-text-weight-bold" data-target="modal-js-example">ADD</button></li>
+            <li><a>Remove</a></li>
+            <li><a href="http://www.walmart.com">Order</a></li>
+          </ul>
+        </aside>
+      </div>
+      <!-- Second Column: Inventory Table -->
+      <div class="column">
+        <!-- <section class="section is-justify-content-center"> -->
+          <div class="table-container">
+            <table class="table is-striped is-hoverable is-fullwidth">
+              <thead>
+                <tr class="is-uppercase">
+                  <!-- <th>#</th> -->
+                  <th>Category</th>
+                  <th>Product Name</th>
+                  <th>Quantity</th>
+                  <th>PAR</th>
+                  <th>Location</th>
+                </tr>
+              </thead>
+              
+              <tbody id="table-body">
+              </tbody>
+            </table>
+          </div>
+        <!-- </section> -->
+      </div>
+    </div>
+  </main>  
   </body>
+  <script src="../JS/inventory.js"></script>
 </html>

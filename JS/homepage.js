@@ -1,3 +1,4 @@
+
 //MODAL SCRIPT
 // this is the code if we wanted to use a modal for the input form
 document.addEventListener('DOMContentLoaded', () => {
@@ -32,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
       $close.addEventListener('click', () => {
         closeModal($target);
+        location.reload();
       });
     });
   
@@ -44,37 +46,10 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   // END MODAL SCRIPT
 
-  // variables for grabbing stuff from HTML
-// const catInput = document.querySelector('#productCat')
-// const nameInput = document.querySelector('#productName')
-// const quantInput = document.querySelector('#productQuant')
-// const parInput = document.querySelector('#par')
-// const locationInput = document.querySelector('#location')
-// const inventoryForm = document.querySelector('#inventoryForm')
-// const submitInput = document.querySelector('#submit')
-// const invButton = document.querySelector('#viewInt')
-// const errorMsg = document.querySelector('#error')
-
-
-// function for form submission, storing in local storage, then redirects to inventory page
-
-// function submit() {
-
-//     if (catInput.value=='' || nameInput.value == '' || quantInput.value == '' || parInput.value == '' || locationInput.value == '') {
-//         errorMsg.textContent = 'Please complete the form.'
-//         return
-//     }
-//     const inventory = {
-//         ProductCategory: catInput.value,
-//         ProductName: nameInput.value,
-//         ProductQuantity: quantInput.value,
-//         MinimumProductRequired: parInput.value,
-//         ProductLocation: locationInput.value,
-//     }
-//   }
 const submitInput = document.getElementById('submit');
 const invButton = document.getElementById('viewInt');
 const modalForm = document.getElementById('inventoryForm');
+const errorMessage = document.getElementById('error');
 
 const inputInfo = [];
 
@@ -97,36 +72,34 @@ submitInput.onclick = (event) => {
     location: locationInput
     })
 
-  //   inputInfo.push({ 
-  //   category: catInput, 
-  //   name: nameInput, 
-  //   quantity: quantInput, 
-  //   par: parInput, 
-  //   location: locationInput
-  // });
-
   localStorage.setItem('inputInfo', JSON.stringify(storedData));
 
   if (modalForm) {
     modalForm.reset();
+    }
+    
+    errorMessage.textContent = 'Product input successful';
+    errorMessage.style.color = 'black';
+  } else {
+    errorMessage.textContent = 'Please fill out the form';
+    errorMessage.style.color = 'red';
   }
-  alert('product input successful');
-} else {
-  alert('please fill out form');
 }
-  };
+
+  
   invButton.onclick = () => {
-    console.log('View Inventory button clicked'); // Debugging log
+    console.log('View Inventory button clicked');
     const storedData = JSON.parse(localStorage.getItem('inputInfo')) || [];
     
     if (storedData.length > 0) {
-      console.log('Data exists, redirecting to inventory.html');
-      window.location.href = './inventory.html'; // Adjusted path
+      window.location.href = './inventory.html';
     } else {
-      alert('No product data available. Redirecting anyway...');
-      window.location.href = './inventory.html'; // Adjusted path
+      window.location.href = './inventory.html'; 
     }
-  };
+
+  }
+
+  //};
     // invButton.onclick = () => {
     //   if (inputInfo.length > 0) {
     //   localStorage.setItem(`inputInfo`, JSON.stringify(inputInfo));
@@ -147,3 +120,40 @@ submitInput.onclick = (event) => {
 //   event.preventDefault();  
 //   submit()
 // });
+
+//Homepage Trackers Script
+//Products under PAR List
+function orderSoon() {
+const inventory = JSON.parse(localStorage.getItem('inputInfo'));
+const needToBeOrdered = inventory.filter(name => name.par > name.quantity);
+
+const belowParList = document.querySelector('#orderSoon');
+needToBeOrdered.forEach(obj => {
+  const li = document.createElement("li");
+  li.textContent= obj.name;
+  belowParList.appendChild(li);
+});
+};
+orderSoon();
+
+//define inventory globally
+const inventory = JSON.parse(localStorage.getItem('inputInfo'));
+
+//Category Counter
+const numberOfCategories = inventory.filter((obj, index, arr) => {
+  return arr.map(mapObj => mapObj.category).indexOf(obj.category) === index;
+});
+const categoryNumber =(numberOfCategories.length);
+const categoryCounter = document.querySelector('#categoryCounter');
+
+categoryCounter.textContent = categoryNumber;
+
+//Product Counter
+const numberOfProducts = inventory.filter((obj, index, arr) => {
+  return arr.map(mapObj => mapObj.name).indexOf(obj.name) === index;
+});
+const ProductNumber =(numberOfProducts.length)
+const ProductCounter = document.querySelector('#productCounter')
+
+ProductCounter.textContent = ProductNumber;
+
