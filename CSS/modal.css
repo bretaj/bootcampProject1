@@ -76,3 +76,58 @@ h2 {
 #submit {
   float: right;
 }
+
+/* modal form media query for buttons to stack as columns */
+
+@media (max-width: 1366px) {
+  .button-container {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+  }
+  .button-container button {
+    margin-right: 0;
+    margin-bottom: 5px;
+    width: 100%;
+    padding: 5px 10px;
+  }
+  }
+  
+  /* modal form styling */
+
+.formbox {
+  background-color: rgb(0, 209, 178);
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+}
+
+  #h3 {
+    text-align: center;
+    margin-bottom: 0.75rem;
+    color: black;
+    font-weight: 400;
+    }
+
+  #error {
+    text-align: center;
+    font-weight: 600;
+  }  
+
+  #submit, #viewInt {
+    color: white;
+    background-color: rgb(0, 161, 135);
+    padding: 0.3rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s;
+  }
+
+  /* buttons slightly shrink and change color when pressed*/
+  #submit:active, #viewInt:active {
+    background-color: rgb(4, 114, 96);
+    transform:  scale(0.90);
+  }
+
+  /* the below will not work on mobile */
+  /* #submit:hover, #viewInt:hover {
+    background-color: rgb(245, 225, 35);
+  } */
