@@ -1,6 +1,10 @@
-/* 
+#trackers {
+    width: 70%;
+    justify-self: end;
 }
-aside {
+
+
+/* aside {
   flex: 1;
   background-color: #b9c6ae;
   padding: 80px;
