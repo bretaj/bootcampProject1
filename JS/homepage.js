@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
       $close.addEventListener('click', () => {
         closeModal($target);
+        location.reload();
       });
     });
   
